@@ -3,8 +3,11 @@ package pl.bartekficek.ocrsystem;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 import net.sourceforge.tess4j.*;
+import org.springframework.stereotype.Service;
+
 import javax.imageio.ImageIO;
 
+@Service
 public class OCRService {
 
     public String doOCR(String url) {
