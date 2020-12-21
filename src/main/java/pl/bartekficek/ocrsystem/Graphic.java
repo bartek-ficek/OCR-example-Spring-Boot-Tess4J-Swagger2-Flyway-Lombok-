@@ -1,7 +1,15 @@
 package pl.bartekficek.ocrsystem;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Graphic {
 
+    @Id
+    @GeneratedValue
+    private Long id;
     private String url;
     private String content;
 
