@@ -19,10 +19,11 @@ public class OCRServiceApi {
     }
 
     @PostMapping("/api/ocr")
-    public Graphic doOCR(@RequestBody Graphic graphic) {
+    public String doOCR(@RequestBody Graphic graphic) {
         String ocrResult = ocrService.doOCR(graphic.getUrl());
         graphic.setContent(ocrResult);
-        return graphicRepo.save(graphic);
+        graphicRepo.save(graphic);
+        return ocrResult;
     }
 
     @GetMapping("/api/ocr")
